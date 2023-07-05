@@ -1,3 +1,6 @@
+import { Routes, Route } from 'react-router-dom';
+import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage';
 import { Counter } from './features/counter/Counter';
 import CampsiteCard from './features/campsites/CampsiteCard.js';
 import { CAMPSITES } from './app/shared/CAMPSITES';
@@ -10,7 +13,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CampsitesDirectoryPage/>
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='contact' element={<ContactPage/>}></Route>
+        <Route path='directory' element={<CampsitesDirectoryPage/>}></Route>
+      </Routes>
       <Footer/>
     </div>
   );
